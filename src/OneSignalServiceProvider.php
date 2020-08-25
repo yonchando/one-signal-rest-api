@@ -11,9 +11,11 @@ class OneSignalServiceProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
         $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
         $this->publishes([
-            __DIR__ . '/config/onesignal.php'                                                   => config_path('onesignal.php'),
-            __DIR__ . '/database/migrations/2020_08_25_053030_create_push_player_ids_table.php' => config_path('2020_08_25_053030_create_push_player_ids_table.php'),
-        ]);
+            __DIR__ . '/config/onesignal.php' => config_path('onesignal.php'),
+        ], 'config');
+        $this->publishes([
+            __DIR__.'/database/migrations/' => database_path('migrations')
+        ], 'migrations');
         $this->mergeConfigFrom(__DIR__ . '/config/onesignal.php', 'onesignal');
         $this->app->singleton('onesignal', function () {
             $api_key = config('onesignal.one_signal_api_key');
