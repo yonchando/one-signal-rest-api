@@ -1,0 +1,21 @@
+{
+  "name": "chando/one-signal-rest-api",
+  "description": "This package for backend easy user to access one-signal Server REST-API",
+  "minimum-stability": "dev",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Yon Chando",
+      "email": "von.chando@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "guzzle/http": "3.9.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Chando\\OneSignalRestApi\\": "src/"
+    }
+  }
+}
